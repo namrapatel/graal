@@ -37,6 +37,15 @@ All of this requires there to be weapons and some sort of way to purchase weapon
 
 ## Implementation notes
 
+The technically interesting part of this game is that its really an experiment in enabling real, useful, Modding / User-Generated Content. 
+
+We'll mess with this by implementing a Behaviour Tree for each Entity in the game, which has a list of actions that the entity can do at any given time in the game. This Behaviour Tree will be implemented as a Registry to which anyone can contribute. 
+
+There are two key problems we want to explore and solve with this experiment: 
+
+- We need a way to determine which the correct Behaviour is to use for each Entity, many players may submit a `SpawnMonster` behaviour, but we need to know which `SpawnMonster` submission is the desired one (Determining Legitimacy).
+- We must require that any of the behaviours that are submitted to the Registry must be valid, meaning that they must adhere to the "Physics" of the game.
+
 ### Behaviour Tree 
 
 - Start node
