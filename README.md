@@ -54,3 +54,19 @@ There are two key problems we want to explore and solve with this experiment:
 - Decision node points to a control flow node or a leaf node
 
 But these need to be implemented as a registry, which means that others can propose new sibling Behaviours but not new Parents or remove any existing Behaviours.
+
+
+## Rough thinking
+
+- [x] Do ALL Entities have a Behaviour Tree, or just NPC-like Entities?
+    - I don't think a Fort needs a behaviour tree, it should simply be implemented as an Entity with specific Components.
+- [ ] Lets play through an example where we have a Fort that has an `OwnedByComponent` and a player wants to add a new `OwnedByComponent` to it which has new logic that allows for there to be two owner Guilds (because of alliances)
+    - This would require the player to add an `AllianceComponent` to the `Guild` Entity alongside the new change to the `Fort Entity.
+        - The question then becomes, how do you implement logic in the new `AllianceComponent` contract that works reads the new `OwnedByComponent` contract?
+            - I think this may be possible by just deploying each contract separately, registering each in the correct place, and writing the logic in each contract such that it reads the respective registry for the respective contract and makes calls to the contract found there rather than internal calls.
+- [ ] Can the client be written to automatically update 
+- [ ] Is it true that new Content submissions naturally respect the Physics because they can't just destroy a Fort for example?
+    - What happens if someone adds a `DestroyableComponent` to the `Fort`?
+        - Client-side
+            - The client should be updated to show 
+- [ ] Real UGC requires more than Behaviour addition, you must be able to add new Entities, Components, Systems, alongside Behaviours so I need to figure out how the ECS registry works
