@@ -46,6 +46,12 @@ There are two key problems we want to explore and solve with this experiment:
 - We need a way to determine which the correct Behaviour is to use for each Entity, many players may submit a `SpawnMonster` behaviour, but we need to know which `SpawnMonster` submission is the desired one (Determining Legitimacy).
 - We must require that any of the behaviours that are submitted to the Registry must be valid, meaning that they must adhere to the "Physics" of the game.
 
+
+### Architecture 
+
+
+
+
 ### Behaviour Tree 
 
 - Start node
