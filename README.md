@@ -49,7 +49,7 @@ There are two key problems we want to explore and solve with this experiment:
 
 ### Architecture 
 
-
+- 
 
 
 ### Behaviour Tree 
