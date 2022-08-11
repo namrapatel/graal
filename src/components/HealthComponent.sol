@@ -7,7 +7,7 @@ struct Health {
   int32 max;
 }
 
-uint256 constant ID = uint256(keccak256("openMUD.component.Health"));
+uint256 constant ID = uint256(keccak256("graal.component.Health"));
 
 contract HealthComponent is Component {
   constructor(address world) Component(world, ID) {}
@@ -31,7 +31,7 @@ contract HealthComponent is Component {
     (int32 current, int32 max) = abi.decode(getRawValue(entity), (int32, int32));
     return Health(current, max);
   }
-
+  
   function getEntitiesWithValue(Health calldata health) public view returns (uint256[] memory) {
     return getEntitiesWithValue(abi.encode(health));
   }
