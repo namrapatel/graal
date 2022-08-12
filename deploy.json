@@ -1,0 +1,15 @@
+{
+  "components": [
+    "AttackComponent",
+    "CaptureableComponent",
+    "HealthComponent",
+    "OwnedByComponent",
+    "PlayerComponent"
+  ],
+  "systems": [
+    { "name": "MoveSystem", "writeAccess": ["PositionComponent", "StaminaComponent", "LastActionTurnComponent"] },
+    { "name": "GameConfigSystem", "writeAccess": ["GameConfigComponent"], "initialize": "new bytes(0)" },
+    { "name": "Init1System", "writeAccess": ["*"], "initialize": "new bytes(0)" },
+    { "name": "TestSystem", "writeAccess": ["*"] }
+  ]
+}

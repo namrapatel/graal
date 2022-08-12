@@ -1,0 +1,2 @@
+solecs/=../../lib/mud/packages/solecs/src/
+std-contracts/=../../lib/mud/packages/std-contracts/src/
