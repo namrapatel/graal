@@ -2,6 +2,47 @@
 # yarn lockfile v1
 
 
+"@latticexyz/persona@https://github.com/latticexyz/persona.git#a53e26a670ed6f041dc5dec365be293457a90b5d":
+  version "1.2.0"
+  resolved "https://github.com/latticexyz/persona.git#a53e26a670ed6f041dc5dec365be293457a90b5d"
+
+"@manifoldxyz/libraries-solidity@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@manifoldxyz/libraries-solidity/-/libraries-solidity-1.0.2.tgz#c63284d910ff6e7af3e1954a54dd126abd084518"
+  integrity sha512-qdCLBD5CicgT6UtDB1fED1kpJfgDqIB6WahtsfZ23ha/nYEBXKHJZ1urIHaIeCOdw8cTi6fMQbQWrld4V1S7dQ==
+  dependencies:
+    "@openzeppelin/contracts" "^4.2.0"
+    "@openzeppelin/contracts-upgradeable" "^4.2.0"
+
+"@manifoldxyz/royalty-registry-solidity@https://github.com/manifoldxyz/royalty-registry-solidity.git#c5ad6269d37e180fbf449a1f5ba2d2ff6c441efc":
+  version "1.0.9"
+  resolved "https://github.com/manifoldxyz/royalty-registry-solidity.git#c5ad6269d37e180fbf449a1f5ba2d2ff6c441efc"
+  dependencies:
+    "@manifoldxyz/libraries-solidity" "^1.0.2"
+    "@openzeppelin/contracts" "^4.3.2"
+    "@openzeppelin/contracts-upgradeable" "^4.3.2"
+
+"@opengsn/contracts@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/@opengsn/contracts/-/contracts-2.2.6.tgz#1784326bc243be2f33cd0171550d3a7f35aa412f"
+  integrity sha512-NraQgKZZUp7/ipLzpe2wd6lqX6w5PbLtHaKOFirm+zJYeCDoG9d6xrVc2VlDwjapMTJyWlYxuXSwOZQhHEMrAg==
+  dependencies:
+    "@openzeppelin/contracts" "^4.2.0"
+
+"@openzeppelin/contracts-upgradeable@^4.2.0", "@openzeppelin/contracts-upgradeable@^4.3.2":
+  version "4.7.3"
+  resolved "https://registry.npmjs.org/@openzeppelin/contracts-upgradeable/-/contracts-upgradeable-4.7.3.tgz#f1d606e2827d409053f3e908ba4eb8adb1dd6995"
+  integrity sha512-+wuegAMaLcZnLCJIvrVUDzA9z/Wp93f0Dla/4jJvIhijRrPabjQbZe6fWiECLaJyfn5ci9fqf9vTw3xpQOad2A==
+
+"@openzeppelin/contracts@^4.2.0", "@openzeppelin/contracts@^4.3.2":
+  version "4.7.3"
+  resolved "https://registry.npmjs.org/@openzeppelin/contracts/-/contracts-4.7.3.tgz#939534757a81f8d69cc854c7692805684ff3111e"
+  integrity sha512-dGRS0agJzu8ybo44pCIf3xBaPQN/65AIXNgK8+4gzKd5kbvlqyxryUYVLJv7fK98Seyd2hDZzVEHSWAh0Bt1Yw==
+
+"@rari-capital/solmate@https://github.com/rari-capital/solmate.git#851ea3baa4327f453da723df75b1093b58b964dc":
+  version "6.3.0"
+  resolved "https://github.com/rari-capital/solmate.git#851ea3baa4327f453da723df75b1093b58b964dc"
+
 "@solidity-parser/parser@^0.14.3":
   version "0.14.3"
   resolved "https://registry.npmjs.org/@solidity-parser/parser/-/parser-0.14.3.tgz#0d627427b35a40d8521aaa933cc3df7d07bfa36f"
@@ -35,6 +76,10 @@ balanced-match@^1.0.0:
   version "1.0.2"
   resolved "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
+
+"base64-sol@https://github.com/Brechtpd/base64.git#4d85607b18d981acff392d2e99ba654305552a97":
+  version "1.1.0"
+  resolved "https://github.com/Brechtpd/base64.git#4d85607b18d981acff392d2e99ba654305552a97"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -132,6 +177,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
+"memmove@https://github.com/brockelmore/memmove.git#d577ecd1bc43656f4032edf4daa9797f756a8ad2":
+  version "0.0.0"
+  resolved "https://github.com/brockelmore/memmove.git#d577ecd1bc43656f4032edf4daa9797f756a8ad2"
+
 minimatch@^3.0.4:
   version "3.1.2"
   resolved "https://registry.npmjs.org/minimatch/-/minimatch-3.1.2.tgz#19cd194bfd3e428f049a70817c038d89ab4be35b"
@@ -145,6 +194,10 @@ minimatch@^5.0.1:
   integrity sha512-9TPBGGak4nHfGZsPBohm9AWg6NoT7QTCehS3BIJABslyZbzxfV78QM2Y6+i741OPZIafFAaiiEMh5OyIrJPgtg==
   dependencies:
     brace-expansion "^2.0.1"
+
+"openzeppelin-solidity@https://github.com/OpenZeppelin/openzeppelin-contracts.git#57725120581e27ec469e1c7e497a4008aafff818":
+  version "4.6.0"
+  resolved "https://github.com/OpenZeppelin/openzeppelin-contracts.git#57725120581e27ec469e1c7e497a4008aafff818"
 
 prettier-plugin-solidity@^1.0.0-beta.13:
   version "1.0.0-beta.24"

@@ -4,8 +4,8 @@ pragma solidity 0.8.15;
 import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
 
 import { Deploy } from "./utils/Deploy.sol";
-import { World } from "../lib/mud/packages/solecs/src/World.sol";
-import { getComponentById } from "../lib/mud/packages/solecs/src/utils.sol";
+import { World } from "solecs/World.sol";
+import { getComponentById } from "solecs/utils.sol";
 
 contract DeployTest is DSTestPlus {
     Deploy internal deploy = new Deploy();

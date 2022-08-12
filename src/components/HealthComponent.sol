@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity >=0.8.15;
-import "solecs/src/Component.sol";
+import "solecs/Component.sol";
 
 struct Health {
   int32 current;
