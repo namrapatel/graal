@@ -14,7 +14,7 @@ contract DeployTest is DSTestPlus {
 
     function testDeploy() public {
         World world = deploy.deploy(deployer, world, true);
-        IComponent component = getComponentById(world.components, uint256(keccak256("graal.component.Player"));
+        IComponent component = getComponentById(world.components, uint256(keccak256("graal.component.Player")));
         console.log(component);
     }
 }

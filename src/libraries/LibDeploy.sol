@@ -2,9 +2,8 @@
 pragma solidity >=0.8.0;
 
 // Foundry
-import { DSTest } from "ds-test/test.sol";
 import { console } from "forge-std/console.sol";
-import { Cheats } from "../test/utils/Cheats.sol";
+import { Cheats } from "../../test/utils/Cheats.sol";
 
 // Solecs 
 import { World } from "solecs/World.sol";
@@ -21,9 +20,7 @@ import { OwnedByComponent, ID as OwnedByComponentID } from "../components/OwnedB
 import { PlayerComponent, ID as PlayerComponentID } from "../components/PlayerComponent.sol";
 
 // Systems
-import { MoveSystem, ID as MoveSystemID } from "../systems/MoveSystem.sol";
-import { GameConfigSystem, ID as GameConfigSystemID } from "../systems/GameConfigSystem.sol";
-import { Init1System, ID as Init1SystemID } from "../systems/Init1System.sol";
+import { InitSystem, ID as InitSystemID } from "../systems/InitSystem.sol";
 import { TestSystem, ID as TestSystemID } from "../systems/TestSystem.sol";
 
 struct DeployResult {
@@ -88,24 +85,9 @@ library LibDeploy {
     ISystem system; 
     IUint256Component components = world.components();
 
-    console.log("Deploying MoveSystem");
-    system = new MoveSystem(components, world);
-    world.registerSystem(address(system), MoveSystemID);
-    authorizeWriter(components, PositionComponentID, address(system));
-    authorizeWriter(components, StaminaComponentID, address(system));
-    authorizeWriter(components, LastActionTurnComponentID, address(system));
-    console.log(address(system));
-
-    console.log("Deploying GameConfigSystem");
-    system = new GameConfigSystem(components, world);
-    world.registerSystem(address(system), GameConfigSystemID);
-    authorizeWriter(components, GameConfigComponentID, address(system));
-    if(init) system.execute(new bytes(0));
-    console.log(address(system));
-
-    console.log("Deploying Init1System");
-    system = new Init1System(components, world);
-    world.registerSystem(address(system), Init1SystemID);
+    console.log("Deploying InitSystem");
+    system = new InitSystem(components, world);
+    world.registerSystem(address(system), InitSystemID);
     authorizeWriter(components, AttackComponentID, address(system));
     authorizeWriter(components, CaptureableComponentID, address(system));
     authorizeWriter(components, HealthComponentID, address(system));
