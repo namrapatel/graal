@@ -7,10 +7,11 @@ import { getAddressById, getComponentById, addressToEntity, getSystemAddressById
 
 import { PlayerComponent, ID as PlayerComponentID  } from "../components/PlayerComponent.sol";
 import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
+import { OwnedByComponent, ID as OwnedByComponentID } from "../components/OwnedByComponent.sol";
 
-import { Room } from "../utils/types.sol";
+import { Room } from "../utils/Types.sol";
 
-uint256 constant ID = uint256(keccak256("mudwar.system.PlayerJoin"));
+uint256 constant ID = uint256(keccak256("graal.system.PlayerJoin"));
 
 contract PlayerJoinSystem is System {
   constructor(IUint256Component _components, IWorld _world) System(_components, _world) {}
@@ -31,5 +32,8 @@ contract PlayerJoinSystem is System {
 
     // Spawn player in GraalCity
     LocationComponent(getAddressById(components, LocationComponentID)).set(playerEntity, uint32(Room.GraalCity));
+
+    // Set owner of player as msg.sender
+    OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(playerEntity, addressToEntity(msg.sender)); // TODO: Is this a correct pattern?
   }
 }

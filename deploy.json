@@ -7,6 +7,6 @@
     "PlayerComponent"
   ],
   "systems": [
-    { "name": "InitSystem", "writeAccess": ["*"], "initialize": "new bytes(0)" },
+    { "name": "InitSystem", "writeAccess": ["*"], "initialize": "new bytes(0)" }
   ]
 }
