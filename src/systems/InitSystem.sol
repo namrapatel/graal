@@ -2,7 +2,10 @@
 pragma solidity >=0.8.15;
 import "solecs/System.sol";
 
-import { FortPrototype } from "../prototypes/FortPrototype.sol";
+import { SardonsFortPrototype } from "../prototypes/SardonsFortPrototype.sol";
+import { CastleFortPrototype } from "../prototypes/CastleFortPrototype.sol";
+import { MoDFortPrototype } from "../prototypes/MoDFortPrototype.sol";
+import { SwamptownFortPrototype } from "../prototypes/SwamptownFortPrototype.sol";
 
 uint256 constant ID = uint256(keccak256("graal.system.Init"));
 
@@ -15,6 +18,14 @@ contract InitSystem is System {
 
   function execute(bytes memory) public returns (bytes memory) {
     // Initialize Prototypes
-    FortPrototype(components);
+
+    // Init Forts
+    SardonsFortPrototype(components);
+    CastleFortPrototype(components);
+    MoDFortPrototype(components);
+    SwamptownFortPrototype(components);
+
+    
+
   }
 }

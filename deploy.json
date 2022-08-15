@@ -8,6 +8,5 @@
   ],
   "systems": [
     { "name": "InitSystem", "writeAccess": ["*"], "initialize": "new bytes(0)" },
-    { "name": "TestSystem", "writeAccess": ["*"] }
   ]
 }
