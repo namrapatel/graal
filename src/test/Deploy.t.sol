@@ -17,7 +17,7 @@ contract DeployTest is DSTest {
     address worldAddress = address(0);
 
     function testDeploy() public {
-        World world = deploy.deploy(deployerAddress, worldAddress, true);
+        World world = deploy.deploy(deployerAddress, worldAddress, false);
         IUint256Component components = world.components();
 
         uint256 locationComponent = addressToEntity(address(LocationComponent(getAddressById(components, LocationComponentID))));     
