@@ -106,14 +106,12 @@ library LibDeploy {
   }
   
   function deploySystems(address _world, bool init) internal {
-    console.log(1);
     World world = World(_world);
-    console.log(2);
+    
     // Deploy systems
     ISystem system;
-    console.log(3); 
     IUint256Component components = world.components();
-    console.log(12);
+
     console.log("Deploying AttackSystem");
     system = new AttackSystem(components, world);
     world.registerSystem(address(system), AttackSystemID);

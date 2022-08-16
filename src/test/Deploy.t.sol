@@ -14,7 +14,7 @@ import { LocationComponent, ID as LocationComponentID } from "../components/Loca
 contract DeployTest is DSTest {
     Deploy internal deploy = new Deploy();
     address deployerAddress = address(0);
-    address worldAddress = address(99);
+    address worldAddress = address(0);
 
     function testDeploy() public {
         World world = deploy.deploy(deployerAddress, worldAddress, true);
