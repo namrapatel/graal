@@ -8,6 +8,7 @@ import { getAddressById, getComponentById, addressToEntity, getSystemAddressById
 import { PlayerComponent, ID as PlayerComponentID  } from "../components/PlayerComponent.sol";
 import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 import { OwnedByComponent, ID as OwnedByComponentID } from "../components/OwnedByComponent.sol";
+import { MoveableComponent, ID as MoveableComponentID } from "../components/MoveableComponent.sol";
 
 import { Room } from "../utils/Types.sol";
 
@@ -35,5 +36,8 @@ contract PlayerJoinSystem is System {
 
     // Set owner of player as msg.sender
     OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(playerEntity, addressToEntity(msg.sender)); // TODO: Is this a correct pattern?
+  
+    // Make Player Moveable
+    MoveableComponent(getAddressById(components, MoveableComponentID)).set(playerEntity);
   }
 }

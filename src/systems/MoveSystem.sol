@@ -9,6 +9,7 @@ import { LibMove } from "../libraries/LibMove.sol";
 import { PlayerComponent, ID as PlayerComponentID  } from "../components/PlayerComponent.sol";
 import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 import { OwnedByComponent, ID as OwnedByComponentID } from "../components/OwnedByComponent.sol";
+import { MoveableComponent, ID as MoveableComponentID } from "../components/MoveableComponent.sol";
 
 import { Room } from "../utils/Types.sol";
 
@@ -21,16 +22,21 @@ contract MoveSystem is System {
         (uint32 newLocation) = abi.decode(arguments, (uint32));
         uint256 playerEntity = addressToEntity(msg.sender);
 
+        // Check entity is moveable
+        MoveableComponent moveableComponent = MoveableComponent(getAddressById(components, MoveableComponentID));
+        require(moveableComponent.has(playerEntity), "This entity is not Moveable");
+
         // Check if the desired move is valid
-        bytes memory currLocation = LocationComponent(getAddressById(components, LocationComponentID)).getRawValue(playerEntity); 
-        require(uint32(currLocation) != uint32(Room.None), "Player not spawned or is offline.");
+        uint32 currLocation = LocationComponent(getAddressById(components, LocationComponentID)).getValue(playerEntity); 
+        require(currLocation != uint32(Room.None), "Player not spawned or is offline.");
         require(LibMove.checkMove(currLocation, newLocation), "Invalid move.");
 
-
-        return abi.encode(0); // TODO: Fix this to return the correct arguments
+        return abi.encode(newLocation, playerEntity); 
     }
 
     function execute(bytes memory arguments) public returns (bytes memory) {
+        (uint32 newLocation, uint256 playerEntity) = abi.decode(arguments, (uint32, uint256));
 
+        LocationComponent(getAddressById(components, LocationComponentID)).set(playerEntity, newLocation);
     }
 }
