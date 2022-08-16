@@ -2,9 +2,7 @@
 pragma solidity >=0.8.15;
 
 // Foundry
-import { DSTest } from "ds-test/test.sol";
 import { console } from "forge-std/console.sol";
-import { Cheats } from "../test/utils/Cheats.sol";
 
 // Solecs 
 import { World } from "solecs/World.sol";

@@ -24,7 +24,7 @@ function MoDFortPrototype(IUint256Component components) {
   OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(ID, addressToEntity(address(0)));
   RoomComponent(getAddressById(components, RoomComponentID)).set(ID, uint32(Room.MoD));
   RoomTypeComponent(getAddressById(components, RoomTypeComponentID)).set(ID, uint32(RoomType.Fort));
-  LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.Mod));
+  LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.MoD));
 
   string[] memory commands = new string[](3);
   commands[0] = "Attack";
