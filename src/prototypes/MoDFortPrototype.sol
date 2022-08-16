@@ -32,7 +32,7 @@ function MoDFortPrototype(IUint256Component components) {
   commands[2] = "MoveTo";
   CommandsComponent(getAddressById(components, CommandsComponentID)).set(ID, commands);
 
-  uint256[] memory componentIds = new uint256[](3);
+  uint256[] memory componentIds = new uint256[](7);
   componentIds[0] = HealthComponentID;
   componentIds[1] = CaptureableComponentID;
   componentIds[2] = OwnedByComponentID;

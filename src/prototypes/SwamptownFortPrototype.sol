@@ -32,7 +32,7 @@ function SwamptownFortPrototype(IUint256Component components) {
   LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.Swamptown));
 
 
-  uint256[] memory componentIds = new uint256[](3);
+  uint256[] memory componentIds = new uint256[](7);
   componentIds[0] = HealthComponentID;
   componentIds[1] = CaptureableComponentID;
   componentIds[2] = OwnedByComponentID;

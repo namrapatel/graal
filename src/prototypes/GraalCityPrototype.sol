@@ -24,11 +24,11 @@ function GraalCityPrototype(IUint256Component components) {
   commands[0] = "MoveTo";
   CommandsComponent(getAddressById(components, CommandsComponentID)).set(ID, commands);
 
-  uint256[] memory componentIds = new uint256[](3);
-  componentIds[2] = OwnedByComponentID;
-  componentIds[3] = RoomComponentID;
-  componentIds[4] = RoomTypeComponentID;
-  componentIds[5] = CommandsComponentID;
+  uint256[] memory componentIds = new uint256[](4);
+  componentIds[0] = OwnedByComponentID;
+  componentIds[1] = RoomComponentID;
+  componentIds[2] = RoomTypeComponentID;
+  componentIds[3] = CommandsComponentID;
 
   PrototypeComponent(getAddressById(components, PrototypeComponentID)).set(ID, componentIds);
 }

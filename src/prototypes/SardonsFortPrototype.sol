@@ -43,7 +43,7 @@ function SardonsFortPrototype(IUint256Component components) {
   console.log(7);
 
 
-  uint256[] memory componentIds = new uint256[](3);
+  uint256[] memory componentIds = new uint256[](7);
   componentIds[0] = HealthComponentID;
   componentIds[1] = CaptureableComponentID;
   componentIds[2] = OwnedByComponentID;
