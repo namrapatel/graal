@@ -2,7 +2,7 @@
 pragma solidity >=0.8.15;
 
 // Foundry
-import { DSTest } from "ds-test/test.sol";
+import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
 import { Vm } from "forge-std/Vm.sol";
 import { console } from "forge-std/console.sol";
 import { Utilities } from "./Utilities.sol";
@@ -12,7 +12,7 @@ import { World } from "solecs/World.sol";
 // Libraries
 import { LibDeploy, DeployResult } from "../../libraries/LibDeploy.sol";
 
-contract Deploy is DSTest {
+contract Deploy is DSTestPlus {
   Cheats internal immutable vm = Cheats(HEVM_ADDRESS);
   Utilities internal immutable utils = new Utilities();
   address public deployer;
