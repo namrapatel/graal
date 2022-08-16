@@ -15,6 +15,7 @@ import { Room } from "../utils/Types.sol";
 
 uint256 constant ID = uint256(keccak256("graal.system.Move"));
 
+// Note: This is a v0, dummy MoveSystem for client-side testing purposes.
 contract MoveSystem is System {
     constructor(IUint256Component _components, IWorld _world) System(_components, _world) {}
 

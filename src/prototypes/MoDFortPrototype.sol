@@ -18,7 +18,7 @@ import { Room, RoomType } from "../utils/Types.sol";
 uint256 constant ID = uint256(keccak256("graal.prototype.MoDFort"));
 
 function MoDFortPrototype(IUint256Component components) {
-  HealthComponent(getAddressById(components, HealthComponentID)).set(ID, Health({ current: 100_000, max: 100_000 }));
+  HealthComponent(getAddressById(components, HealthComponentID)).set(ID, Health({ current: 100, max: 100 }));
   CaptureableComponent(getAddressById(components, CaptureableComponentID)).set(ID);
   OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(ID, addressToEntity(address(0)));
   RoomComponent(getAddressById(components, RoomComponentID)).set(ID, uint32(Room.MoD));
