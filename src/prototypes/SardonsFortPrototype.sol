@@ -21,27 +21,17 @@ import { console } from "forge-std/console.sol";
 uint256 constant ID = uint256(keccak256("graal.prototype.SardonsFort"));
 
 function SardonsFortPrototype(IUint256Component components) {
-  console.log("SardonsFortPrototype");
   HealthComponent(getAddressById(components, HealthComponentID)).set(ID, Health({ current: 100, max: 100 }));
-  console.log(0);
   CaptureableComponent(getAddressById(components, CaptureableComponentID)).set(ID);
-  console.log(1);
   OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(ID, addressToEntity(address(0)));
-  console.log(2);
   RoomComponent(getAddressById(components, RoomComponentID)).set(ID, uint32(Room.Sardons));
-  console.log(3);
   RoomTypeComponent(getAddressById(components, RoomTypeComponentID)).set(ID, uint32(RoomType.Fort));
-  console.log(4);
   string[] memory commands = new string[](3);
   commands[0] = "Attack";
   commands[1] = "Defend";
   commands[2] = "MoveTo";
-  console.log(5);
   CommandsComponent(getAddressById(components, CommandsComponentID)).set(ID, commands);
-  console.log(6);
   LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.Sardons));
-  console.log(7);
-
 
   uint256[] memory componentIds = new uint256[](7);
   componentIds[0] = HealthComponentID;
