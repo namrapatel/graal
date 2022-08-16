@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.15;
 
-import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
+import { DSTest } from "ds-test/test.sol";
 
 import { Deploy } from "./utils/Deploy.sol";
 import { World } from "solecs/World.sol";
@@ -11,11 +11,10 @@ import { IUint256Component } from "solecs/interfaces/IUint256Component.sol";
 import { console } from "forge-std/console.sol";
 import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 
-
-contract DeployTest is DSTestPlus {
+contract DeployTest is DSTest {
     Deploy internal deploy = new Deploy();
     address deployerAddress = address(0);
-    address worldAddress = address(1);
+    address worldAddress = address(99);
 
     function testDeploy() public {
         World world = deploy.deploy(deployerAddress, worldAddress, true);

@@ -50,7 +50,7 @@ library LibDeploy {
     // Deploy world
     result.world = _world == address(0) ? new World() : World(_world);
     if(_world == address(0)) result.world.init(); // Init if it's a fresh world
-
+    console.log("here");
       // Deploy components
     if(!_reuseComponents) {
       Component comp;
@@ -96,7 +96,7 @@ library LibDeploy {
       console.log(address(comp));
 
     } 
-    
+    console.log("here1");
     deploySystems(address(result.world), true);
   }
     
@@ -106,11 +106,14 @@ library LibDeploy {
   }
   
   function deploySystems(address _world, bool init) internal {
+    console.log(1);
     World world = World(_world);
+    console.log(2);
     // Deploy systems
-    ISystem system; 
+    ISystem system;
+    console.log(3); 
     IUint256Component components = world.components();
-
+    console.log(12);
     console.log("Deploying AttackSystem");
     system = new AttackSystem(components, world);
     world.registerSystem(address(system), AttackSystemID);

@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity >=0.8.15;
 
-import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
+import { DSTest } from "ds-test/test.sol";
 import { Vm } from "forge-std/Vm.sol";
 
 //common utilities for forge tests
-contract Utilities is DSTestPlus {
+contract Utilities is DSTest {
   Vm internal immutable vm = Vm(HEVM_ADDRESS);
   bytes32 internal nextUser = keccak256(abi.encodePacked("user address"));
 
