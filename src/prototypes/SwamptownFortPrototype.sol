@@ -12,6 +12,7 @@ import { HealthComponent, ID as HealthComponentID, Health } from "../components/
 import { RoomComponent, ID as RoomComponentID } from "../components/RoomComponent.sol";
 import { RoomTypeComponent, ID as RoomTypeComponentID } from "../components/RoomTypeComponent.sol";
 import { CommandsComponent, ID as CommandsComponentID } from "../components/CommandsComponent.sol";
+import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 
 import { Room, RoomType } from "../utils/Types.sol";
 
@@ -28,6 +29,7 @@ function SwamptownFortPrototype(IUint256Component components) {
   commands[1] = "Defend";
   commands[2] = "MoveTo";
   CommandsComponent(getAddressById(components, CommandsComponentID)).set(ID, commands);
+  LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.Swamptown));
 
 
   uint256[] memory componentIds = new uint256[](3);
@@ -37,6 +39,7 @@ function SwamptownFortPrototype(IUint256Component components) {
   componentIds[3] = RoomComponentID;
   componentIds[4] = RoomTypeComponentID;
   componentIds[5] = CommandsComponentID;
+  componentIds[6] = LocationComponentID;
 
   PrototypeComponent(getAddressById(components, PrototypeComponentID)).set(ID, componentIds);
 }

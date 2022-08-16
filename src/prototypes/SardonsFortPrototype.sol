@@ -12,6 +12,7 @@ import { HealthComponent, ID as HealthComponentID, Health } from "../components/
 import { RoomComponent, ID as RoomComponentID } from "../components/RoomComponent.sol";
 import { RoomTypeComponent, ID as RoomTypeComponentID } from "../components/RoomTypeComponent.sol";
 import { CommandsComponent, ID as CommandsComponentID } from "../components/CommandsComponent.sol";
+import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 
 import { Room, RoomType } from "../utils/Types.sol";
 
@@ -21,13 +22,14 @@ function SardonsFortPrototype(IUint256Component components) {
   HealthComponent(getAddressById(components, HealthComponentID)).set(ID, Health({ current: 100, max: 100 }));
   CaptureableComponent(getAddressById(components, CaptureableComponentID)).set(ID);
   OwnedByComponent(getAddressById(components, OwnedByComponentID)).set(ID, addressToEntity(address(0)));
-   RoomComponent(getAddressById(components, RoomComponentID)).set(ID, uint32(Room.Sardons));
+  RoomComponent(getAddressById(components, RoomComponentID)).set(ID, uint32(Room.Sardons));
   RoomTypeComponent(getAddressById(components, RoomTypeComponentID)).set(ID, uint32(RoomType.Fort));
   string[] memory commands = new string[](3);
   commands[0] = "Attack";
   commands[1] = "Defend";
   commands[2] = "MoveTo";
   CommandsComponent(getAddressById(components, CommandsComponentID)).set(ID, commands);
+    LocationComponent(getAddressById(components, LocationComponentID)).set(ID, uint32(Room.Sardons));
 
 
   uint256[] memory componentIds = new uint256[](3);
@@ -37,6 +39,7 @@ function SardonsFortPrototype(IUint256Component components) {
   componentIds[3] = RoomComponentID;
   componentIds[4] = RoomTypeComponentID;
   componentIds[5] = CommandsComponentID;
+  componentIds[6] = LocationComponentID;
 
   PrototypeComponent(getAddressById(components, PrototypeComponentID)).set(ID, componentIds);
 }
