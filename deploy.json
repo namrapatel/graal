@@ -2,6 +2,7 @@
   "components": [
     "AttackComponent",
     "CaptureableComponent",
+    "CommandsComponent",
     "HealthComponent",
     "LocationComponent",
     "MoveableComponent",

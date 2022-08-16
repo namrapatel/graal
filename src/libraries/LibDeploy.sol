@@ -14,6 +14,7 @@ import { ISystem } from "solecs/interfaces/ISystem.sol";
 // Components
 import { AttackComponent, ID as AttackComponentID } from "../components/AttackComponent.sol";
 import { CaptureableComponent, ID as CaptureableComponentID } from "../components/CaptureableComponent.sol";
+import { CommandsComponent, ID as CommandsComponentID } from "../components/CommandsComponent.sol";
 import { HealthComponent, ID as HealthComponentID } from "../components/HealthComponent.sol";
 import { LocationComponent, ID as LocationComponentID } from "../components/LocationComponent.sol";
 import { MoveableComponent, ID as MoveableComponentID } from "../components/MoveableComponent.sol";
@@ -63,6 +64,10 @@ library LibDeploy {
       comp = new CaptureableComponent(address(result.world));
       console.log(address(comp));
 
+      console.log("Deploying CommandsComponent");
+      comp = new CommandsComponent(address(result.world));
+      console.log(address(comp));
+
       console.log("Deploying HealthComponent");
       comp = new HealthComponent(address(result.world));
       console.log(address(comp));
@@ -107,29 +112,23 @@ library LibDeploy {
   
   function deploySystems(address _world, bool init) internal {
     World world = World(_world);
-
     // Deploy systems
-    ISystem system;
+    ISystem system; 
     IUint256Component components = world.components();
 
     console.log("Deploying AttackSystem");
     system = new AttackSystem(components, world);
-    console.log("finished deploying AttackSystem");
     world.registerSystem(address(system), AttackSystemID);
-    console.log("namra");
-    console.log(HealthComponentID);
     authorizeWriter(components, HealthComponentID, address(system));
-    console.log("namra1");
     authorizeWriter(components, OwnedByComponentID, address(system));
-    console.log("namra2");
     console.log(address(system));
-    console.log("namra3");
 
     console.log("Deploying InitSystem");
     system = new InitSystem(components, world);
     world.registerSystem(address(system), InitSystemID);
     authorizeWriter(components, AttackComponentID, address(system));
     authorizeWriter(components, CaptureableComponentID, address(system));
+    authorizeWriter(components, CommandsComponentID, address(system));
     authorizeWriter(components, HealthComponentID, address(system));
     authorizeWriter(components, LocationComponentID, address(system));
     authorizeWriter(components, MoveableComponentID, address(system));
