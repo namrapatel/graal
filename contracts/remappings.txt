@@ -1,0 +1,12 @@
+solecs/=mud/packages/solecs/src/
+std-contracts/=mud/packages/std-contracts/src/
+solmate/=lib/solmate/src/
+forge-std/=lib/forge-std/src/
+
+memmove/=node_modules/memmove/src/
+persona/=node_modules/@latticexyz/persona/src/
+gsn=node_modules/@opengsn/contracts/src/
+ds-test/=node_modules/ds-test/src/
+royalty-registry/=node_modules/@manifoldxyz/royalty-registry-solidity/contracts/
+@openzeppelin/=node_modules/openzeppelin-solidity/
+base64/=node_modules/base64-sol/

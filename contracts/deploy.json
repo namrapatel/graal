@@ -1,0 +1,21 @@
+{
+  "components": [
+    "AttackComponent",
+    "CaptureableComponent",
+    "CommandsComponent",
+    "HealthComponent",
+    "LocationComponent",
+    "MoveableComponent",
+    "OwnedByComponent",
+    "PlayerComponent",
+    "PrototypeComponent",
+    "RoomComponent",
+    "RoomTypeComponent"
+  ],
+  "systems": [
+    { "name": "AttackSystem", "writeAccess": ["HealthComponent", "OwnedByComponent"] },
+    { "name": "InitSystem", "writeAccess": ["*"], "initialize": "new bytes(0)" },
+    { "name": "MoveSystem", "writeAccess": ["LocationComponent"] },
+    { "name": "PlayerJoinSystem", "writeAccess": ["PlayerComponent", "LocationComponent", "OwnedByComponent", "MoveableComponent"] }
+  ]
+}
