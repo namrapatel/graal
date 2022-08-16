@@ -36,7 +36,7 @@ contract MoveSystem is System {
     }
 
     function execute(bytes memory arguments) public returns (bytes memory) {
-        (uint32 newLocation, uint256 playerEntity) = abi.decode(arguments, (uint32, uint256));
+        (uint32 newLocation, uint256 playerEntity) = abi.decode(requirement(arguments), (uint32, uint256));
 
         LocationComponent(getAddressById(components, LocationComponentID)).set(playerEntity, newLocation);
     }
