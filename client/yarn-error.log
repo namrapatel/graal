@@ -1,0 +1,85 @@
+Arguments: 
+  /Users/moralpunk/.nvm/versions/node/v16.13.2/bin/node /Users/moralpunk/.nvm/versions/node/v15.14.0/bin/yarn
+
+PATH: 
+  /Users/moralpunk/.nvm/versions/node/v16.13.2/bin:/usr/local/opt/python@3.7/bin:/Users/moralpunk/.gem/ruby/2.6.0/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:/Users/moralpunk/.nvm/versions/node/v15.14.0/bin:/Users/moralpunk/.nix-profile/bin:”/Users/moralpunk/.emacs.d/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:~/.emacs.d/bin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/moralpunk/.cargo/bin:/usr/local/opt/python@3.7/bin:/Users/moralpunk/.gem/ruby/2.6.0/bin:/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:/Users/moralpunk/.nvm/versions/node/v15.14.0/bin:/Users/moralpunk/.nix-profile/bin:”/Users/moralpunk/.emacs.d/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Users/moralpunk/.cargo/bin”:/Users/moralpunk/.foundry/bin:/Users/moralpunk/.starklings/dist/starklings”:/Users/moralpunk/.foundry/bin:/Users/moralpunk/.starklings/dist/starklings
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.13.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.npmjs.org/ri-contracts: Not found
+      at Request.params.callback [as _callback] (/Users/moralpunk/.nvm/versions/node/v15.14.0/lib/node_modules/yarn/lib/cli.js:66138:18)
+      at Request.self.callback (/Users/moralpunk/.nvm/versions/node/v15.14.0/lib/node_modules/yarn/lib/cli.js:140883:22)
+      at Request.emit (node:events:390:28)
+      at Request.<anonymous> (/Users/moralpunk/.nvm/versions/node/v15.14.0/lib/node_modules/yarn/lib/cli.js:141855:10)
+      at Request.emit (node:events:390:28)
+      at IncomingMessage.<anonymous> (/Users/moralpunk/.nvm/versions/node/v15.14.0/lib/node_modules/yarn/lib/cli.js:141777:12)
+      at Object.onceWrapper (node:events:509:28)
+      at IncomingMessage.emit (node:events:402:35)
+      at endReadableNT (node:internal/streams/readable:1343:12)
+      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+
+npm manifest: 
+  {
+    "name": "graal-client",
+    "version": "0.0.1",
+    "dependencies": {
+      "@ethersproject/providers": "^5.6.1",
+      "async-mutex": "^0.3.2",
+      "ethers": "^5.6.6",
+      "heap-js": "^2.2.0",
+      "lodash": "^4.17.21",
+      "mobx": "^6.4.2",
+      "mobx-react-lite": "^3.3.0",
+      "mobx-utils": "^6.0.4",
+      "proxy-deep": "^3.1.1",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-is": "^18.0.0",
+      "ri-contracts": "^0.2.0",
+      "rxjs": "^7.5.5",
+      "styled-components": "^5.3.5",
+      "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+      "@originjs/vite-plugin-commonjs": "^1.0.3",
+      "@types/jest": "^27.4.1",
+      "@types/react": "^17.0.43",
+      "@types/react-dom": "^18.0.4",
+      "@types/styled-components": "^5.1.24",
+      "@types/uuid": "^8.3.4",
+      "@typescript-eslint/eslint-plugin": "^5.12.1",
+      "@typescript-eslint/parser": "^5.12.1",
+      "dpdm": "^3.9.0",
+      "eslint": "^8.9.0",
+      "lodash": "^4.17.21",
+      "netlify": "^11.0.2",
+      "netlify-cli": "^10.10.2",
+      "prettier": "^2.5.1",
+      "process": "^0.11.10",
+      "typescript": "^4.5.5",
+      "vite": "^2.8.4"
+    },
+    "scripts": {
+      "lint": "eslint . --fix --ext .ts",
+      "prettier": "prettier --write '**/*.{ts,tsx}'",
+      "start": "vite --force",
+      "// comment re: build": "we run into an error if we don't allocate 8gb ram for building (https://github.com/vitejs/vite/issues/2433)",
+      "build": "NODE_OPTIONS='--max-old-space-size=8192' vite build",
+      "start:prod": "vite preview",
+      "check:circdepen": "dpdm ./src/index.ts"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
