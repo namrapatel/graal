@@ -1,8 +1,8 @@
 import React from "react";
 import { registerUIComponent } from "../engine";
-import { getComponentEntities, getComponentValueStrict } from "@latticexyz/recs";
+import { getComponentEntities, getComponentValueStrict } from "../../../../mud/packages/recs";
 import { map } from "rxjs";
-import { ActionStateString, ActionState } from "@latticexyz/std-client";
+import { ActionStateString, ActionState } from "../../../../mud/packages/std-client";
 
 export function registerActionQueue() {
   registerUIComponent(

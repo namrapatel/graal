@@ -7,7 +7,7 @@ import {
   createEncoder,
   NetworkComponentUpdate,
   createSystemExecutor,
-} from "@latticexyz/network";
+} from "../../../../mud/packages/network";
 import { World as WorldContract } from "ri-contracts/types/ethers-contracts/World";
 import { abi as WorldAbi } from "ri-contracts/abi/World.json";
 import { bufferTime, filter, Observable, Subject } from "rxjs";
@@ -22,17 +22,17 @@ import {
   setComponent,
   Type,
   World,
-} from "@latticexyz/recs";
+} from "../../../../mud/packages/recs";
 import { computed, IComputedValue } from "mobx";
-import { keccak256, stretch, toEthAddress } from "@latticexyz/utils";
-import ComponentAbi from "@latticexyz/solecs/abi/Component.json";
+import { keccak256, stretch, toEthAddress } from "../../../../mud/packages/utils";
+import ComponentAbi from "../../../../mud/packages/solecs/Component.json";
 import { Contract, Signer } from "ethers";
-import { Component as SolecsComponent } from "@latticexyz/solecs";
+import { Component as SolecsComponent } from "../../../../mud/packages/solecs";
 import { SystemTypes } from "ri-contracts/types/SystemTypes";
 import { SystemAbis } from "ri-contracts/types/SystemAbis.mjs";
 import { JsonRpcProvider } from "@ethersproject/providers";
 import { GameConfig, getNetworkConfig } from "../config";
-import { defineStringComponent } from "@latticexyz/std-client";
+import { defineStringComponent } from "../../../../mud/packages/std-client";
 
 export type ContractComponents = {
   [key: string]: Component<Schema, { contractId: string }>;

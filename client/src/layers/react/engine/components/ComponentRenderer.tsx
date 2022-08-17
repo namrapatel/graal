@@ -1,11 +1,11 @@
 import React from "react";
 import { observer } from "mobx-react-lite";
 import { useLayers, useEngineStore } from "../hooks";
-import { filterNullishValues } from "@latticexyz/utils";
+import { filterNullishValues } from "../../../../../mud/packages/utils";
 import { Cell } from "./Cell";
 import styled from "styled-components";
 import { GridConfiguration, UIComponent } from "../types";
-import { useStream } from "@latticexyz/std-client";
+import { useStream } from "../../../../../mud/packages/std-client";
 import { Layers } from "../../../../types";
 
 const UIGrid = styled.div`
